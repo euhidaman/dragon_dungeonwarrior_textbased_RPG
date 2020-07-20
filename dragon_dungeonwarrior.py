@@ -46,14 +46,14 @@ def right():
     right_roomdir=input("Enter the way you want to go : Left, Right, or Front:\n")
 
     if ((right_roomdir=="left")or(right_roomdir=="Left")):
-        bookshelf()
+        bookshelf()    #write it later
     elif ((right_roomdir=="right")or(right_roomdir=="Right")):
         print("You exit through the Dungeon.\n")
         print("\t\t\t\t\t***GAME OVER***")
         sys.exit(0)
     elif ((right_roomdir=="front")or(right_roomdir=="Front")):
         print("The Fireplace was the entrance to HELL.\n")
-        hell()
+        hell()   #write this later
     else:
         print("Wrong direction, You have stepped on a Magic Cirlce.\nYou are DEAD !!!\n")
         print("\t\t\t\t\t***GAME OVER***")
@@ -62,11 +62,33 @@ def right():
 def front():
     print("You have entered the Treasure room.\n")
     print("Infront of you lies an old Golden Box.\n")
-    toward_box=input("To go towards the box, Type 'Go front'.\n")
+    toward_box=input("To go towards the box, Type 'Go front':\n")
 
     if ((toward_box=="go front")or(toward_box=="Go front")):
-        trap()
+        trap()   #write this later
     else:
         print("Wrong direction, You have stepped on a Magic Cirlce.\nYou are DEAD !!!\n")
+        print("\t\t\t\t\t***GAME OVER***")
+        sys.exit(1)
+
+
+def bookshelf():
+    print("You are at the book shelf.\n")
+    print("And, you see some books on the shelf.\n")
+    print("There is also a note that says:\n")
+    print("** DO NOT READ THESE BOOKS, THESE WILL BE THE DEATH OF YOU **\n")
+    read_books=input("To read the books, Type 'Read books'.\nTo go back, Type 'Back off' :\n")
+
+    if ((read_books=="Read books")or(read_books=="read books")):
+        print("You were warned !!!!!\n")
+        print("You are DEAD\n")
+        print("\t\t\t\t\t***GAME OVER***")
+        sys.exit(1)
+    elif ((read_books=="back off")or(read_books=="Back off")):
+        print("You go back to the Entrance of the Reading Room.\n")
+        right()
+    else:
+        print("You Touched something CuRsEd !!!!\n")
+        print("You are DEAD\n")
         print("\t\t\t\t\t***GAME OVER***")
         sys.exit(1)
