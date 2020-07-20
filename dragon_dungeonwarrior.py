@@ -46,14 +46,14 @@ def right():
     right_roomdir=input("Enter the way you want to go : Left, Right, or Front:\n")
 
     if ((right_roomdir=="left")or(right_roomdir=="Left")):
-        bookshelf()    #write it later
+        bookshelf()    #finished
     elif ((right_roomdir=="right")or(right_roomdir=="Right")):
         print("You exit through the Dungeon.\n")
         print("\t\t\t\t\t***GAME OVER***")
         sys.exit(0)
     elif ((right_roomdir=="front")or(right_roomdir=="Front")):
         print("The Fireplace was the entrance to HELL.\n")
-        hell()   #write this later
+        hell()   #finished
     else:
         print("Wrong direction, You have stepped on a Magic Cirlce.\nYou are DEAD !!!\n")
         print("\t\t\t\t\t***GAME OVER***")
@@ -65,14 +65,15 @@ def front():
     toward_box=input("To go towards the box, Type 'Go front':\n")
 
     if ((toward_box=="go front")or(toward_box=="Go front")):
-        trap()   #write this later
+        print("OH No, You stepped on a TRAP, and it transports you somewhere !!!!\n")
+        hell()   #finished
     else:
         print("Wrong direction, You have stepped on a Magic Cirlce.\nYou are DEAD !!!\n")
         print("\t\t\t\t\t***GAME OVER***")
         sys.exit(1)
 
 
-def bookshelf():
+def bookshelf():   #make sure to put this at the top
     print("You are at the book shelf.\n")
     print("And, you see some books on the shelf.\n")
     print("There is also a note that says:\n")
@@ -90,5 +91,40 @@ def bookshelf():
     else:
         print("You Touched something CuRsEd !!!!\n")
         print("You are DEAD\n")
+        print("\t\t\t\t\t***GAME OVER***")
+        sys.exit(1)
+
+
+def  hell(): #make sure to put this at the top
+    print("You have reached HELL !!!!\n")
+    print("Infront of you, stands a DRAGON \n")
+    print("KILL HIM, to pass through this hurdle.\n")
+
+    attack=int(input("Enter enough attack power to kill the beast (attack power > 10) :\n"))
+
+    if (attack < 10):
+        print("Attack power was TOO LOW....\n")
+        print("The DRAGON kills YOU.\n")
+        print("\t\t\t\t\t***GAME OVER***")
+        sys.exit(1)
+    elif(10 <= attack <= 500):
+        print("You do your signature MAGMA ICE MAGIC SLASH !!!!\n")
+        print("This kills the dragon, and you are awarded the title 'THE DRAGON SLAYER KNIGHT'.\n")
+        print("You see Two Portals open....\nThe portals show the destination, you want to go to.\n")
+        go_back=input("To go to the Treasure Room, Type 'Treasure room'\nTo go to the Reading Room, Type 'Reading room':\n")
+        if ((go_back=="Treasure room")or(go_back=="treasure room")):
+            treasure_room()  #write this later
+        elif ((go_back=="Reading Room")or(go_back=="reading room")):
+            right()
+        else:
+            print("You got lost in the Portals !!!!\n")
+            print("You are DEAD NOW\n")
+            print("\t\t\t\t\t***GAME OVER***")
+            sys.exit(1)
+    else:
+        print("WoW, You did your most powerful move 'TIME LIFE BREAKER' !!!!\n")
+        print("This kills the DRAGON, but you also lost all your health by using this move....\n")
+        print("With your dying breath, you are awarded the title 'DRAGON LIFE DESTROYER' \n")
+        print("You are DEAD.\nWell Played.\nTRY AGAIN LATER\n")
         print("\t\t\t\t\t***GAME OVER***")
         sys.exit(1)
