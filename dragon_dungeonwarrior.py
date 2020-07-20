@@ -2,7 +2,7 @@ import sys
 
 
 def mainhall(swordpick):
-    roomdir=input("Enter the way you want to go : Left, Right, or Front:\n")
+    roomdir=input("\nEnter the way you want to go : Left, Right, or Front:\n")
 
     if ((roomdir=="left")or(roomdir=="Left")):
         left(swordpick)
@@ -18,7 +18,7 @@ def mainhall(swordpick):
 
 def left(swordpick):
     print("Sword found in this room.\n")
-    swordpick = int(input("Press '0' to pickup Enchanted Sword\n"))
+    swordpick = int(input("\nPress '0' to pickup Enchanted Sword\n"))
 
     if (swordpick == 0) :
         print("You are back to main Hall with Enchanted Sword.\n")
@@ -34,7 +34,7 @@ def right(swordpick):
     print("To your left is the Book shelf.\n")
     print("To your right is the Secret Exit.\n")
     print("To your front lies the Fireplace.\n")
-    right_roomdir=input("Enter the way you want to go : Left, Right, or Front:\n")
+    right_roomdir=input("\nEnter the way you want to go : Left, Right, or Front:\n")
 
     if ((right_roomdir=="left")or(right_roomdir=="Left")):
         bookshelf(swordpick)    #finished
@@ -53,7 +53,7 @@ def right(swordpick):
 def front(swordpick):
     print("You have entered the Treasure room.\n")
     print("Infront of you lies an old Golden Box.\n")
-    toward_box=input("To go towards the box, Type 'Go front':\n")
+    toward_box=input("\nTo go towards the box, Type 'Go front':\n")
 
     if ((toward_box=="go front")or(toward_box=="Go front")):
         print("OH No, You stepped on a TRAP, and it transports you somewhere !!!!\n")
@@ -69,7 +69,7 @@ def bookshelf(swordpick):   #make sure to put this at the top
     print("And, you see some books on the shelf.\n")
     print("There is also a note that says:\n")
     print("** DO NOT READ THESE BOOKS, THESE WILL BE THE DEATH OF YOU **\n")
-    read_books=input("To read the books, Type 'Read books'.\nTo go back, Type 'Back off' :\n")
+    read_books=input("\nTo read the books, Type 'Read books'.\nTo go back, Type 'Back off' :\n")
 
     if ((read_books=="Read books")or(read_books=="read books")):
         print("You were warned !!!!!\n")
@@ -91,7 +91,7 @@ def  hell(swordpick): #make sure to put this at the top
     print("Infront of you, stands a DRAGON \n")
     print("KILL HIM, to pass through this hurdle.\n")
     if (swordpick == 0):
-        attack=int(input("Enter enough attack power to kill the beast (attack power > 10) :\n"))
+        attack=int(input("\nEnter enough attack power to kill the beast (attack power > 10) :\n"))
 
         if (attack < 10):
             print("Attack power was TOO LOW....\n")
@@ -102,7 +102,7 @@ def  hell(swordpick): #make sure to put this at the top
             print("You do your signature MAGMA ICE MAGIC SLASH !!!!\n")
             print("This kills the dragon, and you are awarded the title 'THE DRAGON SLAYER KNIGHT'.\n")
             print("You see Two Portals open....\nThe portals show the destination, you want to go to.\n")
-            go_back=input("To go to the Treasure Room, Type 'Treasure room'\nTo go to the Reading Room, Type 'Reading room':\n")
+            go_back=input("\nTo go to the Treasure Room, Type 'Treasure room'\nTo go to the Reading Room, Type 'Reading room':\n")
             if ((go_back=="Treasure room")or(go_back=="treasure room")):
                 treasure_room()  #write this later
             elif ((go_back=="Reading Room")or(go_back=="reading room")):
@@ -125,7 +125,8 @@ def  hell(swordpick): #make sure to put this at the top
         print("\t\t\t\t\t***GAME OVER***")
         sys.exit(1)
 
-
+def treasure_room():
+    pass #write this later
 
 def main():
     print("Welcome, Warrior !!!!\nYou have entered the Dragon's Treasure Dungeon !!!\n")
@@ -138,3 +139,5 @@ def main():
     print("Choose your rooms wisely.\nBecause you can not go back now !!\n")
     swordpick = 1
     mainhall(swordpick)
+
+main()
