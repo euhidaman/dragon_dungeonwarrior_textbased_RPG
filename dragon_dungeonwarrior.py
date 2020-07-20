@@ -21,3 +21,14 @@ def mainhall():
     else:
         print("Wrong direction, You have stepped on a Magic Cirlce.\nYou are DEAD !!!\n")
         sys.exit(1)
+
+def left():
+    print("Sword found in this room.\n")
+    swordpick = input(int("Press '0' to pickup Sword\n"))
+
+    if (swordpick == 0) :
+        print("You are back to main Hall with sword.\n")
+        mainhall()
+    else:
+        print("You are back in main Hall.\n")
+        mainhall()        
