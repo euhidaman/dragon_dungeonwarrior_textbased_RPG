@@ -120,6 +120,7 @@ def  hell(swordpick): #make sure to put this at the top
             print("\t\t\t\t\t***GAME OVER***")
             sys.exit(1)
     else:
+        print("Oh NO !!!!")
         print("You don't have a SWORD !!!!\n")
         print("The DRAGON kills YOU.\n")
         print("\t\t\t\t\t***GAME OVER***")
