@@ -7,7 +7,7 @@ print("Now all are DEAD !!!!\n")
 print("To the left is the Sword room.\n")
 print("To the right is the castle reading room, with back entrance.\n")
 print("To the front lies the Treasure room.\n")
-print("Choose your rooms wisely.\n")
+print("Choose your rooms wisely.\nBecause you can not go back now !!\n")
 
 
 def mainhall():
@@ -54,6 +54,18 @@ def right():
     elif ((right_roomdir=="front")or(right_roomdir=="Front")):
         print("The Fireplace was the entrance to HELL.\n")
         hell()
+    else:
+        print("Wrong direction, You have stepped on a Magic Cirlce.\nYou are DEAD !!!\n")
+        print("\t\t\t\t\t***GAME OVER***")
+        sys.exit(1)
+
+def front():
+    print("You have entered the Treasure room.\n")
+    print("Infront of you lies an old Golden Box.\n")
+    toward_box=input("To go towards the box, Type 'Go front'.\n")
+
+    if ((toward_box=="go front")or(toward_box=="Go front")):
+        trap()
     else:
         print("Wrong direction, You have stepped on a Magic Cirlce.\nYou are DEAD !!!\n")
         print("\t\t\t\t\t***GAME OVER***")
