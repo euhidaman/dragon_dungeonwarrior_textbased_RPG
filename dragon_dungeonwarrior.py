@@ -27,12 +27,13 @@ def mainhall():
 
 def left():
     print("Sword found in this room.\n")
-    swordpick = input(int("Press '0' to pickup Sword\n"))
+    swordpick = input(int("Press '0' to pickup Enchanted Sword\n"))
 
     if (swordpick == 0) :
-        print("You are back to main Hall with sword.\n")
+        print("You are back to main Hall with Enchanted Sword.\n")
         mainhall()
     else:
+        print("There was nothing else in the Sword room.\n")
         print("You are back in main Hall.\n")
         mainhall()
 
