@@ -9,18 +9,21 @@ print("To the right is the castle reading room, with back entrance.\n")
 print("To the front lies the Treasure room.\n")
 print("Choose your rooms wisely.\n")
 
-def mainhall():
-    roomdir=input("Enter the way you want to go : Left, Right, or Front\n")
 
-    if (roomdir=="left")or(roomdir=="Left"):
+def mainhall():
+    roomdir=input("Enter the way you want to go : Left, Right, or Front:\n")
+
+    if ((roomdir=="left")or(roomdir=="Left")):
         left()
-    elif (roomdir=='right')or(roomdir=="Right"):
+    elif ((roomdir=='right')or(roomdir=="Right")):
         right()
-    elif (roomdir=='front')or(roomdir=="Front"):
+    elif ((roomdir=='front')or(roomdir=="Front")):
         front()
     else:
         print("Wrong direction, You have stepped on a Magic Cirlce.\nYou are DEAD !!!\n")
+        print("\t\t\t\t\t***GAME OVER***")
         sys.exit(1)
+
 
 def left():
     print("Sword found in this room.\n")
@@ -31,4 +34,26 @@ def left():
         mainhall()
     else:
         print("You are back in main Hall.\n")
-        mainhall()        
+        mainhall()
+
+
+def right():
+    print("You are in the Reading room.\n")
+    print("To your left is the Book shelf.\n")
+    print("To your right is the Secret Exit.\n")
+    print("To your front lies the Fireplace.\n")
+    right_roomdir=input("Enter the way you want to go : Left, Right, or Front:\n")
+
+    if ((right_roomdir=="left")or(right_roomdir=="Left")):
+        bookshelf()
+    elif ((right_roomdir=="right")or(right_roomdir=="Right")):
+        print("You exit through the Dungeon.\n")
+        print("\t\t\t\t\t***GAME OVER***")
+        sys.exit(0)
+    elif ((right_roomdir=="front")or(right_roomdir=="Front")):
+        print("The Fireplace was the entrance to HELL.\n")
+        hell()
+    else:
+        print("Wrong direction, You have stepped on a Magic Cirlce.\nYou are DEAD !!!\n")
+        print("\t\t\t\t\t***GAME OVER***")
+        sys.exit(1)
