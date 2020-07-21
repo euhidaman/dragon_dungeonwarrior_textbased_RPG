@@ -104,9 +104,9 @@ def  hell(swordpick): #make sure to put this at the top
             print("You see Two Portals open....\nThe portals show the destination, you want to go to.\n")
             go_back=input("\nTo go to the Treasure Room, Type 'Treasure room'\nTo go to the Reading Room, Type 'Reading room':\n")
             if ((go_back=="Treasure room")or(go_back=="treasure room")):
-                treasure_room()  #write this later
+                treasure_room(swordpick)  #write this later
             elif ((go_back=="Reading Room")or(go_back=="reading room")):
-                right()
+                right(swordpick)
             else:
                 print("You got lost in the Portals !!!!\n")
                 print("You are DEAD NOW\n")
@@ -126,8 +126,27 @@ def  hell(swordpick): #make sure to put this at the top
         print("\t\t\t\t\t***GAME OVER***")
         sys.exit(1)
 
-def treasure_room():
-    pass #write this later
+def treasure_room(swordpick):
+    print("You are back the Treasure room.\n")
+    print("Infront of you lies the old Golden Box.\n")
+    open_box=input("\nTo open the box, Type 'Open box':\n")
+
+    if ((open_box=="Open box")or(open_box=="open box")):
+        print("You opened the box, and there lies a note saying : \n")
+        print("YOU SHOULD NOT BE GREEDY, BE CONTENT WITH WHAT YOU HAVE :)\n")
+        room_change=input("To leave the room, Type 'Main hall' or Type 'Reading room':\n")
+        if ((room_change=="Main hall") or (room_change=="main hall")):
+            mainhall(swordpick)
+        elif ((room_change=="Reading room")or(room_change=="reading room")):
+            right(swordpick)
+        else:
+            print("Wrong Move.\nYou are DEAD !!!\n")
+            print("\t\t\t\t\t***GAME OVER***")
+            sys.exit(1)
+    else:
+        print("Wrong Move.\nYou are DEAD !!!\n")
+        print("\t\t\t\t\t***GAME OVER***")
+        sys.exit(1)
 
 def main():
     print("Welcome, Warrior !!!!\nYou have entered the Dragon's Treasure Dungeon !!!\n")
