@@ -136,7 +136,7 @@ def treasure_room(swordpick):
         print("YOU SHOULD NOT BE GREEDY, BE CONTENT WITH WHAT YOU HAVE :)\n")
         room_change=input("To leave the room, Type 'Main hall' or Type 'Reading room':\n")
         if ((room_change=="Main hall") or (room_change=="main hall")):
-            print("You are back in the main hall.\n")
+            print("\nYou are back in the main hall.")
             mainhall(swordpick)
         elif ((room_change=="Reading room")or(room_change=="reading room")):
             right(swordpick)
